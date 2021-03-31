@@ -36,5 +36,57 @@ namespace Catering
         {
 
         }
+
+        private void btn_total_Click(object sender, EventArgs e)
+        {
+            
+            int guests = int.Parse(tb_numGuests.Text);
+            int total = guests * 35;
+            if (guests < 0)
+            {
+                label10.Text = "Please enter a positive number";
+            }
+            else if( guests == 0)
+            {
+                label10.Text = "$35";
+            }
+            else
+            {
+                label10.Text = total.ToString();
+
+            }
+            
+            label10.Visible = true;
+        }
+
+        private void lbl_Total_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_sides_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combo_desert_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
