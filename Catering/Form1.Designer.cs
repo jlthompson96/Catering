@@ -144,6 +144,7 @@ namespace Catering
             this.tb_numGuests.Name = "tb_numGuests";
             this.tb_numGuests.Size = new System.Drawing.Size(100, 23);
             this.tb_numGuests.TabIndex = 9;
+            this.tb_numGuests.TextChanged += new System.EventHandler(this.tb_numGuests_TextChanged);
             // 
             // lb_entree
             // 
@@ -163,6 +164,7 @@ namespace Catering
             // 
             // cb_sides
             // 
+            this.cb_sides.CheckOnClick = true;
             this.cb_sides.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cb_sides.FormattingEnabled = true;
             this.cb_sides.Items.AddRange(new object[] {

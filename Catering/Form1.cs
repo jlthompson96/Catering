@@ -39,7 +39,7 @@ namespace Catering
 
         private void btn_total_Click(object sender, EventArgs e)
         {
-            
+
             int guests = int.Parse(tb_numGuests.Text);
             int total = guests * 35;
             if (guests < 0)
@@ -71,7 +71,15 @@ namespace Catering
 
         private void cb_sides_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int numSelected = cb_sides.CheckedItems.Count;
 
+            if(numSelected == 3)
+            {
+               while(cb_sides.CheckedIndices.Count > 0)
+                {
+                    cb_sides.SetItemChecked(cb_sides.CheckedIndices[0], false);
+                }
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -87,6 +95,19 @@ namespace Catering
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tb_numGuests_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int numGuests = int.Parse(tb_numGuests.Text);
+            }
+            catch(Exception)
+            {
+                label10.Text = "$0";
+            }
+           
         }
     }
 }
