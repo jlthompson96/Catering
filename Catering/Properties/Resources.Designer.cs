@@ -59,5 +59,15 @@ namespace Catering.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wave_1638292_1920 {
+            get {
+                object obj = ResourceManager.GetObject("wave-1638292_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
