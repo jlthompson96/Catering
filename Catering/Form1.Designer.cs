@@ -208,20 +208,20 @@ namespace Catering
             // 
             this.lbl_Total.AutoSize = true;
             this.lbl_Total.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Total.Location = new System.Drawing.Point(361, 463);
+            this.lbl_Total.Location = new System.Drawing.Point(109, 519);
             this.lbl_Total.Name = "lbl_Total";
-            this.lbl_Total.Size = new System.Drawing.Size(88, 37);
+            this.lbl_Total.Size = new System.Drawing.Size(95, 37);
             this.lbl_Total.TabIndex = 14;
-            this.lbl_Total.Text = "Total";
+            this.lbl_Total.Text = "Total:";
             this.lbl_Total.Click += new System.EventHandler(this.lbl_Total_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(364, 500);
+            this.label10.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(195, 519);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 29);
+            this.label10.Size = new System.Drawing.Size(115, 37);
             this.label10.TabIndex = 15;
             this.label10.Text = "label10";
             this.label10.Visible = false;

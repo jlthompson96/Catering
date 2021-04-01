@@ -40,40 +40,58 @@ namespace Catering
 
         private void btn_total_Click(object sender, EventArgs e)
         {
-            
-            //Parse Guests Input to Int and Calculate Total
-            int guests = int.Parse(tb_numGuests.Text);
-            int total = guests * 35;
+            int num;
 
-            //Write to File
-            StreamWriter sw = new StreamWriter("Event.txt");
-            sw.WriteLine("Name: " + tb_name.Text);
-            sw.WriteLine("Phone Number: " + tb_phone.Text);
-            sw.WriteLine("Number of Guests: " + tb_numGuests.Text);
-            sw.WriteLine("Entree: " + lb_entree.SelectedItem);
-            sw.WriteLine("Sides: " + cb_sides.CheckedItems[0] + ", " + cb_sides.CheckedItems[1]);
-            sw.WriteLine("Desert: " + combo_desert.SelectedItem);
-            sw.Close();
-            
-            //Check Number of Guests
-            if (guests < 0)
+            //Check if Number of Guests is Numeric
+            if(int.TryParse(tb_numGuests.Text, out num) == true)
             {
-                label10.Text = "Please enter a positive number";
-            }
-            else if (guests == 0)
-            {
-                label10.Text = "$35";
+                //Parse Guests Input to Int and Calculate Total
+                int guests = int.Parse(tb_numGuests.Text);
+                int total = guests * 35;
+
+                //Write to File
+                StreamWriter sw = new StreamWriter("Event.txt");
+                sw.WriteLine("Name: " + tb_name.Text);
+                sw.WriteLine("Phone Number: " + tb_phone.Text);
+                sw.WriteLine("Number of Guests: " + tb_numGuests.Text);
+                sw.WriteLine("Entree: " + lb_entree.SelectedItem);
+                sw.WriteLine("Sides: " + cb_sides.CheckedItems[0] + ", " + cb_sides.CheckedItems[1]);
+                sw.WriteLine("Desert: " + combo_desert.SelectedItem);
+
+                sw.Close();
+
+                //Check Number of Guests
+                if (guests < 0)
+                {
+                    label10.Text = "Please enter a positive number";
+                }
+                else if (guests == 0)
+                {
+                    label10.Text = "$0";
+                }
+                else
+                {
+                    label10.Text = "$" + total.ToString();
+                }
+                
             }
             else
             {
-                label10.Text = "$" + total.ToString();
+                //Write to File
+                StreamWriter sw = new StreamWriter("Event.txt");
+                sw.WriteLine("Name: " + tb_name.Text);
+                sw.WriteLine("Phone Number: " + tb_phone.Text);
+                sw.WriteLine("Number of Guests: NaN");
+                sw.WriteLine("Entree: " + lb_entree.SelectedItem);
+                sw.WriteLine("Sides: " + cb_sides.CheckedItems[0] + ", " + cb_sides.CheckedItems[1]);
+                sw.WriteLine("Desert: " + combo_desert.SelectedItem);
+
+                sw.Close();
+                label10.Text = "$0";
             }
-
-            label10.Visible = true;
-
             
 
-
+            label10.Visible = true;
         }
 
         private void lbl_Total_Click(object sender, EventArgs e)
@@ -117,7 +135,6 @@ namespace Catering
 
         private void tb_numGuests_TextChanged(object sender, EventArgs e)
         {
-  
            
         }
     }
